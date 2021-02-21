@@ -1,24 +1,92 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch,
+  Link
+} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Header from './components/Header';
 import './App.css';
+import PlayerPage from './components/PlayerPage.js'
+import SearchForm from "./components/SearchForm";
+import ApiResultsList from './components/ApiResultsList'
 
 function App() {
+  const [nameSearch, setNameSearch] = useState("")
+  const [apiResponse, setApiResponse] = useState([])
+
+  const handleNameChange = event => {
+    console.log(event.target.value);
+    setNameSearch(event.target.value);
+  };
+  useEffect(() => {
+    console.log(nameSearch)
+  })
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const apiCall = `https://www.balldontlie.io/api/v1/players?search=${nameSearch}&per_page=100`
+
+    try {
+      const response = await fetch(apiCall)
+      const results = await response.json()
+      console.log('results', results)
+      setApiResponse(results.data)
+    } catch (err) {
+      console.log(err)
+    }
+    // setNameSearch("")
+    return (
+      <ApiResultsList
+      apiResponse={apiResponse} />
+      )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <nav>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Header />
+        </Link>
+      </nav>
+      <div className="container">
+        {/* <form>
+          <input
+          placeholder="Player Name"
+          type="text"
+          value={nameSearch}
+          onChange={handleNameChange}
+          />
+          <button type="submit" value="Submit" onClick={handleSubmit}>Submit</button>
+          </form>
+        {apiResultsList} */}
+        <Switch>
+          <Route path='/results/:id'>
+            <PlayerPage
+              apiResponse={apiResponse} />
+          </Route>
+          <Route path='/results'>
+            <ApiResultsList
+              apiResponse={apiResponse} />
+          </Route>
+          <Route exact path="/">
+            <SearchForm
+              nameSearch={nameSearch}
+              handleNameChange={handleNameChange}
+              handleSubmit={handleSubmit}
+              apiResponse={apiResponse}
+            />
+          </Route>
+          {/* <Route path='/playerpage/:id'>
+                <PlayerPage
+                // apiResponse={apiResponse}
+                test="test" />
+              </Route> */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
