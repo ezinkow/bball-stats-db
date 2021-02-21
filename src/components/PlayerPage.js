@@ -9,9 +9,7 @@ function PlayerPage({apiResponse}) {
 
     const params = useParams()
     const player = apiResponse.find(id => id.id === Number(params.id))
-    console.log('playerid', player)
-    // console.log('apiresponse', apiResponse)
-    // console.log('test', test)
+    console.log('playerid', player)  
     console.log('apiresponseplayer', apiResponse)
 
     const handleTodaysStatsSubmit = async (event) => {

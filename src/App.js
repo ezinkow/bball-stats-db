@@ -36,7 +36,7 @@ function App() {
     } catch (err) {
       console.log(err)
     }
-    // setNameSearch("")
+    setNameSearch("")
     return (
       <ApiResultsList
       apiResponse={apiResponse} />
@@ -52,25 +52,13 @@ function App() {
         </Link>
       </nav>
       <div className="container">
-        {/* <form>
-          <input
-          placeholder="Player Name"
-          type="text"
-          value={nameSearch}
-          onChange={handleNameChange}
-          />
-          <button type="submit" value="Submit" onClick={handleSubmit}>Submit</button>
-          </form>
-        {apiResultsList} */}
         <Switch>
           <Route path='/results/:id'>
             <PlayerPage
               apiResponse={apiResponse} />
           </Route>
-          <Route path='/results'>
-            <ApiResultsList
-              apiResponse={apiResponse} />
-          </Route>
+          {/* <Route path='/results'>
+          </Route> */}
           <Route exact path="/">
             <SearchForm
               nameSearch={nameSearch}
@@ -78,12 +66,9 @@ function App() {
               handleSubmit={handleSubmit}
               apiResponse={apiResponse}
             />
+            <ApiResultsList
+              apiResponse={apiResponse} />
           </Route>
-          {/* <Route path='/playerpage/:id'>
-                <PlayerPage
-                // apiResponse={apiResponse}
-                test="test" />
-              </Route> */}
         </Switch>
       </div>
     </Router>

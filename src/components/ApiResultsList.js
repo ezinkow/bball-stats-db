@@ -17,7 +17,6 @@ export default function ApiResultsList({ apiResponse }) {
     console.log('allresults', allResults)
 
     return (
-        <h1>{allResults}test</h1>
-        // <div>{allResults}</div>
+        <h1>{allResults}</h1>
     )
 }
