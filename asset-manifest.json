@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/bball-stats-db/static/css/main.89d2cc68.chunk.css",
+    "main.js": "/bball-stats-db/static/js/main.dbc37591.chunk.js",
+    "main.js.map": "/bball-stats-db/static/js/main.dbc37591.chunk.js.map",
+    "runtime-main.js": "/bball-stats-db/static/js/runtime-main.d914f3ce.js",
+    "runtime-main.js.map": "/bball-stats-db/static/js/runtime-main.d914f3ce.js.map",
+    "static/js/2.fe3aaaf5.chunk.js": "/bball-stats-db/static/js/2.fe3aaaf5.chunk.js",
+    "static/js/2.fe3aaaf5.chunk.js.map": "/bball-stats-db/static/js/2.fe3aaaf5.chunk.js.map",
+    "static/js/3.20513a09.chunk.js": "/bball-stats-db/static/js/3.20513a09.chunk.js",
+    "static/js/3.20513a09.chunk.js.map": "/bball-stats-db/static/js/3.20513a09.chunk.js.map",
+    "index.html": "/bball-stats-db/index.html",
+    "static/css/main.89d2cc68.chunk.css.map": "/bball-stats-db/static/css/main.89d2cc68.chunk.css.map",
+    "static/js/2.fe3aaaf5.chunk.js.LICENSE.txt": "/bball-stats-db/static/js/2.fe3aaaf5.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/bball-stats-db/static/media/basketball header.5aa89e68.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d914f3ce.js",
+    "static/js/2.fe3aaaf5.chunk.js",
+    "static/css/main.89d2cc68.chunk.css",
+    "static/js/main.dbc37591.chunk.js"
+  ]
+}
