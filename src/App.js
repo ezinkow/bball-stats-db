@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useRouteMatch,
   Link
 } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -27,16 +26,17 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const apiCall = `https://www.balldontlie.io/api/v1/players?search=${nameSearch}&per_page=100`
-
+    
     try {
       const response = await fetch(apiCall)
       const results = await response.json()
       console.log('results', results)
+      console.log('api call', apiCall)
       setApiResponse(results.data)
     } catch (err) {
       console.log(err)
     }
-    // setNameSearch("")
+    setNameSearch("")
     return (
       <ApiResultsList
       apiResponse={apiResponse} />
@@ -52,25 +52,13 @@ function App() {
         </Link>
       </nav>
       <div className="container">
-        {/* <form>
-          <input
-          placeholder="Player Name"
-          type="text"
-          value={nameSearch}
-          onChange={handleNameChange}
-          />
-          <button type="submit" value="Submit" onClick={handleSubmit}>Submit</button>
-          </form>
-        {apiResultsList} */}
         <Switch>
           <Route path='/results/:id'>
             <PlayerPage
               apiResponse={apiResponse} />
           </Route>
-          <Route path='/results'>
-            <ApiResultsList
-              apiResponse={apiResponse} />
-          </Route>
+          {/* <Route path='/results'>
+          </Route> */}
           <Route exact path="/">
             <SearchForm
               nameSearch={nameSearch}
@@ -78,12 +66,9 @@ function App() {
               handleSubmit={handleSubmit}
               apiResponse={apiResponse}
             />
+            <ApiResultsList
+              apiResponse={apiResponse} />
           </Route>
-          {/* <Route path='/playerpage/:id'>
-                <PlayerPage
-                // apiResponse={apiResponse}
-                test="test" />
-              </Route> */}
         </Switch>
       </div>
     </Router>

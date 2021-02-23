@@ -1,7 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,6 +18,7 @@ export default function Header() {
     return (
         <div className="header">
             <h1>WELCOME BASKETBALL FANS</h1>
+            <h3>Get stats for </h3>
         </div>
     );
 }
