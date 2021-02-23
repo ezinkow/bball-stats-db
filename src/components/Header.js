@@ -5,7 +5,7 @@ export default function Header() {
         <>
             <div className="header">
                 <div className="homeBtn">
-                    <a href="/" syle={{color:"white", textDecoration: 'none'}}>HOME</a>
+                    <a href="/bball-stats-db" syle={{color:"white", textDecoration: 'none'}}>HOME</a>
                 </div>
                 <div className="mainText">
                     <h1>WELCOME BASKETBALL FANS</h1>
