@@ -67,7 +67,7 @@ function App() {
             <ApiResultsList
               apiResponse={apiResponse} />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/bball-stats-db">
             <SearchForm
               nameSearch={nameSearch}
               handleNameChange={handleNameChange}
