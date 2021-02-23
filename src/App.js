@@ -26,7 +26,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const apiCall = `https://www.balldontlie.io/api/v1/players?search=${nameSearch}&per_page=100`
-    
+
     try {
       const response = await fetch(apiCall)
       const results = await response.json()
@@ -39,8 +39,8 @@ function App() {
     setNameSearch("")
     return (
       <ApiResultsList
-      apiResponse={apiResponse} />
-      )
+        apiResponse={apiResponse} />
+    )
   }
 
   return (
@@ -57,8 +57,16 @@ function App() {
             <PlayerPage
               apiResponse={apiResponse} />
           </Route>
-          {/* <Route path='/results'>
-          </Route> */}
+          <Route path='/bball-stats-db'>
+            <SearchForm
+              nameSearch={nameSearch}
+              handleNameChange={handleNameChange}
+              handleSubmit={handleSubmit}
+              apiResponse={apiResponse}
+            />
+            <ApiResultsList
+              apiResponse={apiResponse} />
+          </Route>
           <Route exact path="/">
             <SearchForm
               nameSearch={nameSearch}
