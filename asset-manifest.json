@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bball-stats-db/static/css/main.89d2cc68.chunk.css",
-    "main.js": "/bball-stats-db/static/js/main.d62e502f.chunk.js",
-    "main.js.map": "/bball-stats-db/static/js/main.d62e502f.chunk.js.map",
+    "main.js": "/bball-stats-db/static/js/main.add24a2a.chunk.js",
+    "main.js.map": "/bball-stats-db/static/js/main.add24a2a.chunk.js.map",
     "runtime-main.js": "/bball-stats-db/static/js/runtime-main.d914f3ce.js",
     "runtime-main.js.map": "/bball-stats-db/static/js/runtime-main.d914f3ce.js.map",
     "static/js/2.fe3aaaf5.chunk.js": "/bball-stats-db/static/js/2.fe3aaaf5.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d914f3ce.js",
     "static/js/2.fe3aaaf5.chunk.js",
     "static/css/main.89d2cc68.chunk.css",
-    "static/js/main.d62e502f.chunk.js"
+    "static/js/main.add24a2a.chunk.js"
   ]
 }
