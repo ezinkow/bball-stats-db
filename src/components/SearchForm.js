@@ -1,22 +1,15 @@
-import {
-    Link,
-    Route
-} from "react-router-dom";
-import ApiResultsList from './ApiResultsList'
-
-export default function SearchForm({ nameSearch, handleNameChange, handleSubmit, apiResponse }) {
+export default function SearchForm({ nameSearch, handleNameChange, handleSubmit }) {
     return (
         <>
             <form>
+                <label for='player name'>Search for player to get stats:  </label>
                 <input
                     placeholder="Player Name"
                     type="text"
                     value={nameSearch}
                     onChange={handleNameChange}
                 />
-                <Link to="/results">
                     <input type="submit" value="Submit" onClick={handleSubmit} />
-                </Link>
             </form>
 
         </>

@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useRouteMatch,
   Link
 } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -27,11 +26,12 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const apiCall = `https://www.balldontlie.io/api/v1/players?search=${nameSearch}&per_page=100`
-
+    
     try {
       const response = await fetch(apiCall)
       const results = await response.json()
       console.log('results', results)
+      console.log('api call', apiCall)
       setApiResponse(results.data)
     } catch (err) {
       console.log(err)
