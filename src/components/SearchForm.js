@@ -1,8 +1,8 @@
 export default function SearchForm({ nameSearch, handleNameChange, handleSubmit }) {
     return (
-        <>
+        <div className="searchForm">
             <form>
-                <label for='player name'>Search for player to get stats:  </label>
+                <label for='player name'><h3>Search for player to get stats:  </h3></label>
                 <input
                     placeholder="Player Name"
                     type="text"
@@ -11,7 +11,6 @@ export default function SearchForm({ nameSearch, handleNameChange, handleSubmit 
                 />
                     <input type="submit" value="Submit" onClick={handleSubmit} />
             </form>
-
-        </>
+        </div>
     )
 }

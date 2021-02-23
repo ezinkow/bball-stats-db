@@ -118,8 +118,8 @@ function PlayerPage({ apiResponse }) {
 
     const gameStats = game.length > 0 ? game.map(gameI =>
         <>
-        {gameI.home_team.full_name}: {gameI.home_team_score}<br></br>
-        {gameI.visitor_team.full_name}: {gameI.visitor_team_score}
+        {gameI.visitor_team.full_name}: {gameI.visitor_team_score}<br></br>
+        {gameI.home_team.full_name}: {gameI.home_team_score}
         </>
         ) : ""
 

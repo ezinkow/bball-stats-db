@@ -1,12 +1,15 @@
 .header {
-  padding: 20px;
-  text-align: center;
-  font-size: 30px;
   width: 100%;
   background-image: url("./images/basketball\ header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.mainText {
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
   text-shadow: 2px 2px white;
   color: black;
   line-height: 10px;
@@ -22,4 +25,16 @@
 
 .buttons {
   margin: 2px;
+}
+
+.searchForm {
+  text-align: center;
+}
+
+.homeBtn {
+  margin-left: 50px;
+  text-align: left;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
 }
