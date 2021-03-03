@@ -2,7 +2,7 @@
 
 A site where you can look up any NBA player in the database and see what he did on this date or, for current players, the user can see their current stats.
 
-![image](https://user-images.githubusercontent.com/71417500/109865608-d987ef80-7c29-11eb-8ebf-05dc3efa20de.png)
+![image](https://user-images.githubusercontent.com/71417500/109868907-db53b200-7c2d-11eb-9ddb-52b7e0b23838.png)
 
 ## Deployed link:
 
