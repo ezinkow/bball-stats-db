@@ -53,7 +53,7 @@ function App() {
       </nav>
       <div className="container">
         <Switch>
-          <Route path='/results/:id'>
+          <Route path='/bball-stats-db/results/:id'>
             <PlayerPage
               apiResponse={apiResponse} />
           </Route>

@@ -35,11 +35,21 @@ function PlayerPage({ apiResponse }) {
         var playerId = player.id
     }
     const today = moment().format("YYYY-MM-DD")
+    const yesterday = moment().subtract(1, 'd').format("YYYY-MM-DD")
     const todayNoYear = moment().format("MM-DD")
     const weekAgo = moment().subtract(7, 'd').format("YYYY-MM-DD")
     const onThisDate = `${year}-${todayNoYear}`
-    console.log('onthisdate', onThisDate)
+    function formatDate(date) {
+        const dateArray = date.split("-");
+        const year = dateArray[0];
+        const month = dateArray[1];
+        const dayArray = dateArray[2].split("T");
+        const day = dayArray[0];
+        const formattedDate = [month, day, year].join("-");
+        return formattedDate;
+      }
     const apiCallToday = `https://www.balldontlie.io/api/v1/stats?player_ids[]=${playerId}&dates[]=${today}`
+    const apiCallYesterday = `https://www.balldontlie.io/api/v1/stats?player_ids[]=${playerId}&dates[]=${yesterday}`
     const apiCallWeek = 'https://www.balldontlie.io/api/v1/stats?player_ids[]=' + playerId + '&start_date=' + weekAgo + '&end_date=' + today
     const apiCallOnThisDate = `https://www.balldontlie.io/api/v1/stats?player_ids[]=${playerId}&dates[]=${onThisDate}`
     console.log('playerid', player)
@@ -52,6 +62,23 @@ function PlayerPage({ apiResponse }) {
 
         try {
             const response = await fetch(apiCallToday)
+            const results = await response.json()
+            console.log('results', results)
+            console.log('results.data', results.data)
+            setStatsDisplay(results.data)
+            console.log('statsDisplay', statsDisplay)
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+    const handleYesterdaysStatsSubmit = async (event) => {
+        event.preventDefault()
+        console.log('today', today)
+        console.log('fetch', apiCallToday)
+
+        try {
+            const response = await fetch(apiCallYesterday)
             const results = await response.json()
             console.log('results', results)
             console.log('results.data', results.data)
@@ -161,7 +188,7 @@ function PlayerPage({ apiResponse }) {
             <Table className={classes.table2} size="small">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Date: {stat.game.date}</TableCell>
+                        <TableCell>Date: {formatDate(stat.game.date)}</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -264,6 +291,7 @@ function PlayerPage({ apiResponse }) {
                         handleWeeksStatsSubmit={handleWeeksStatsSubmit}
                         handleYearChange={handleYearChange}
                         handleOnThisDate={handleOnThisDate}
+                        handleYesterdaysStatsSubmit = {handleYesterdaysStatsSubmit}
                         year={year}
                     />
                     {stats}

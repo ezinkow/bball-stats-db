@@ -49,7 +49,7 @@ export default function ApiResultsList({ apiResponse }) {
                                 {apiResponse.map((api) => (
                                     <TableRow key={api.id}>
                                         <TableCell component="th" scope="row">
-                                            <Link to={`/results/${api.id}`}>
+                                            <Link to={`/bball-stats-db/results/${api.id}`}>
                                                 {api.first_name} {api.last_name}
                                             </Link>
                                         </TableCell>

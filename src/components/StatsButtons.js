@@ -1,4 +1,4 @@
-export default function StatsButtons({ handleTodaysStatsSubmit, handleWeeksStatsSubmit, year, handleYearChange, handleOnThisDate }) {
+export default function StatsButtons({ handleTodaysStatsSubmit, handleWeeksStatsSubmit, year, handleYearChange, handleOnThisDate, handleYesterdaysStatsSubmit }) {
     return (
         <div className="statsButtons">
             <label for="year" className="buttons">On this day in:</label>
@@ -23,6 +23,12 @@ export default function StatsButtons({ handleTodaysStatsSubmit, handleWeeksStats
                 type="submit"
                 value="Today's stats"
                 onClick={handleTodaysStatsSubmit}
+                className="buttons"
+            />
+            <input
+                type="submit"
+                value="Yesterday's stats"
+                onClick={handleYesterdaysStatsSubmit}
                 className="buttons"
             />
             <input
