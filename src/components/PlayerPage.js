@@ -275,7 +275,7 @@ function PlayerPage({ apiResponse }) {
                 </TableBody>
             </Table>
         </TableContainer>)
-        : ""
+        : "No game played on this day"
 
 
 

@@ -11,7 +11,7 @@ import PlayerPage from './components/PlayerPage.js'
 import SearchForm from "./components/SearchForm";
 import ApiResultsList from './components/ApiResultsList'
 
-function App() {
+export default function BballStatsApp() {
   const [nameSearch, setNameSearch] = useState("")
   const [apiResponse, setApiResponse] = useState([])
 
@@ -72,5 +72,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
